@@ -31,7 +31,7 @@
                 <span class="el-dropdown-link c-gra" @click="info">
                     <i class="el-icon-service"></i> 个人中心<i class="el-icon-arrow-down el-icon--right"></i>
                 </span>
-                <el-dropdown-menu slot="dropdown">
+                <el-dropdown-menu slot="dropdown"> 
                     <el-dropdown-item command="logout"><span @click="showlogout"><i class="el-icon-circle-close"></i> 安全退出</span></el-dropdown-item>
                 </el-dropdown-menu>
             </el-dropdown>
