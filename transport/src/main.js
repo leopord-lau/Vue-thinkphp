@@ -10,7 +10,7 @@ import store from './store/index'
 import VueResource from 'vue-resource'
 Vue.config.productionTip = false
 Vue.use(ElementUI)
-Vue.use(VueResource)
+Vue.use(VueResource) 
 Vue.prototype.$echarts=ECharts
 /* eslint-disable no-new */
 new Vue({
