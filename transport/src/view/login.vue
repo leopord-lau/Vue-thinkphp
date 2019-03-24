@@ -54,8 +54,8 @@ export default {
     data(){
         return{
             formData:{
-                username:'',
-                password:'',
+                username:leopord,
+                password:123456,
                 captcha:'',
             },
             rules:{
