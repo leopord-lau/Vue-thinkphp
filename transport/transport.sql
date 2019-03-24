@@ -13,7 +13,7 @@ CREATE TABLE `trans_materialUnit` (
  `unitName` CHARACTER(50) NOT NULL COMMENT '单位名称',
 `remark` CHARACTER(50) DEFAULT NULL COMMENT '备注'
 )ENGINE=myisam DEFAULT CHARSET=utf8;
-
+ 
 INSERT INTO `trans_materialUnit`(`unitNumber`, `unitName`) VALUES ('unit-1','kg');
 INSERT INTO `trans_materialUnit`(`unitNumber`, `unitName`) VALUES ('unit-2','ea');
 INSERT INTO `trans_materialUnit`(`unitNumber`, `unitName`) VALUES ('unit-1','pc')
