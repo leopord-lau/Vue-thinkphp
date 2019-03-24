@@ -1,0 +1,233 @@
+/*
+@baseUrl: '@{basePicUrl}';
+// 可视窗口宽度
+@viewportWidth: 1400px;
+@viewportMaxWidth: 1600px;
+// 可视窗口高度
+@viewportHeight: 768px;
+// 主背景颜色
+@mainBackgroundColor: #FFFFFF;
+// 主字体颜色
+@mainFontColor: #646464;
+// 激活颜色
+@activeFontColor: #0B8DDA;
+// 成功
+@successFontColor: #5cB85C;
+// 失败（危险）
+@dangerFontColor: #E22127;
+// 蓝色字体颜色
+@blueFontColor: #0B8DDA;
+// 蓝色边框
+@blueBorderColor: #3294D1;
+// 分割线颜色
+@splitLinkColor: #C5CAD0;
+// 边框显色
+@borderLinkColor: #D3D7DA;
+// 激活边框颜色
+@activeBorderColor: #FF0036;
+// 禁用边框颜色
+@disabledBorderColor: #DCDCDC;
+
+// header 头部颜色
+@headerBackgroundColor: #FDFDFD;
+
+@contentTextColor: #666; // 内容文字
+@switchTitleColor: #36b75c; //切换标题
+
+@commentsTextColor: #999; // 注释文字
+@warnTextColor: #FF0036; // 警告性文字
+@labelTextColor: #ff9e36; // 标签文字
+@succTextColor: #36b75c; // 成功文字颜色
+@wireframeColor: #e5e5e5; // 线框
+*/
+//弹性布局
+.flexlayout(@flex, @direction, @alignItems, @justifyContent, @flexWrap:wrap) {
+  display: @flex;
+  flex-direction: @direction;
+  align-items: @alignItems;
+  justify-content: @justifyContent;
+  flex-wrap: @flexWrap;
+}
+
+.ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.generateInput(@width,@height,@padding,@radius,@borderColor,@color,@backgroundColor) {
+  display: inline-block;
+  padding: @padding;
+  min-width: @width;
+  height: @height;
+  border-radius: @radius;
+  border: 1px solid @borderColor;
+  color: @color;
+  box-shadow: none;
+  outline: none;
+  &:hover,
+  &:focus {
+    outline: none;
+    border-color: @borderColor;
+    box-shadow: none;
+  }
+  &.disabled,
+  &[disabled] {
+    color: @color;
+    background-color: @backgroundColor;
+    border: none;
+    box-shadow: none;
+  }
+}
+
+.btn {
+  //@btnFontColor: @mainFontColor;
+  display: inline-block;
+  margin: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 0px 12px;
+  font-size: 14px;
+  user-select: none;
+  border-radius: 3px;
+
+  &.btn-radius {
+    border-radius: 3px;
+  }
+
+  &:focus,
+  &:active:focus,
+  &.active:focus,
+  &.focus,
+  &:active.focus,
+  &.active.focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+    outline: none;
+  }
+
+  &:hover,
+  &:focus,
+  &.focus {
+    //color: @btnFontColor;
+    text-decoration: none;
+  }
+
+  &:active,
+  &.active {
+    outline: 0;
+    background-image: none;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  }
+
+  .generateBtn(@lineHeight,@fontColor,@backgroundColor,@borderColor,
+                @focusColor,@focusBackgroundColor,@focusBorderColor,
+                @hoverColor,@hoverBackgroundColor,@hoverBorderColor,
+                @disabledBackgroundColor,@disabledBorderColor) {
+    @btnBorderColor: #E0E0E0;
+    @btnDisableColor: #FAFAFA;
+    color: @fontColor;
+    background-color: @backgroundColor;
+    border-color: @borderColor;
+    line-height: @lineHeight;
+    &:focus, &.focus {
+      color: @focusColor;
+      background-color: @focusBackgroundColor;
+      border-color: @focusBorderColor;
+    }
+
+    &:hover {
+      color: @hoverColor;
+      background-color: @hoverBackgroundColor;
+      border-color: @hoverBorderColor;
+    }
+
+    &.disabled,
+    &[disabled],
+    &.disabled:hover,
+    &[disabled]:hover,
+    &.disabled:focus,
+    &[disabled]:focus,
+    &.disabled.focus,
+    &[disabled].focus,
+    &.disabled:active,
+    &[disabled]:active,
+    &.disabled.active,
+    &[disabled].active,
+    &.active {
+      background-color: @disabledBackgroundColor;
+      border-color: @disabledBorderColor;
+    }
+  }
+
+  &.btn-default {
+    .generateBtn(30px, #FFF, #009BDB, #009BDB,
+            #FFF, rgba(0, 155, 219, 0.7), #009BDB,
+            #FFF, rgba(0, 155, 219, 0.7), #009BDB,
+            #ccc, #ccc);
+  }
+
+  &.btn-gray {
+    .generateBtn(30px, #666, #FAFCFB, #D9D9D9,
+            #666, white, #D9D9D9,
+            #666, white, #D9D9D9,
+            #ccc, #ccc);
+    &:hover {
+      background: #E8E9ED !important;
+    }
+  }
+
+  &.btn-blue-consult {
+    .generateBtn(35px, #FFF, #009BDB, #009BDB,
+            #FFF, rgba(0, 155, 219, 0.7), #009BDB,
+            #FFF, rgba(0, 155, 219, 0.7), #009BDB,
+            #ccc, #ccc);
+    width: 118px;
+  }
+
+  &.btn-gray-consult {
+    .generateBtn(35px, #666, #FAFCFB, #D9D9D9,
+            #666, white, #D9D9D9,
+            #666, white, #D9D9D9,
+            #ccc, #ccc);
+    margin-left: 20px;
+    width: 118px;
+  }
+  //.generateBtn(@height,@fontColor,@backgroundColor,@borderColor,
+  //              @focusColor,@focusBackgroundColor,@focusBorderColor,
+  //              @hoverColor,@hoverBackgroundColor,@hoverBorderColor,
+  //              @disabledBackgroundColor,@disabledBorderColor) {
+
+  &.btn-concept {
+    .generateBtn(35px, #FFF, #0b8dda, #0b8dda,
+            #FFF, #0b8dda, #0b8dda,
+            #FFF, #0b8dda, #0b8dda,
+            #ccc, #ccc);
+    width: 128px;
+    border-radius: 3px;
+    font-size: 18px;
+  }
+
+}
+
+a.btn.disabled {
+  pointer-events: none;
+}
+
+.btn-min {
+  line-height: normal;
+}
+
+// 输入框
+.form-control {
+  border-radius: 2px;
+  //border: 1px solid @splitLinkColor;
+  box-shadow: none;
+}
