@@ -82,7 +82,7 @@ export default new Router({
         {path:'/basic/warepositionsetting',name:'warepositionsetting',component:warepositionsetting},
         {path:'/basic/waresection',name:'waresection',component:waresection},
         {path:'/basic/wareshelf',name:'wareshelf',component:wareshelf},
-        {path:'/basic/tray',name:'tray',component:tray},
+        {path:'/basic/tray',name:'tray',component:tray}, 
         {path:'/basic/material',name:'material',component:material},
         {path:'/basic/kind',name:'kind',component:kind},
         {path:'/basic/unit',name:'unit',component:unit},
