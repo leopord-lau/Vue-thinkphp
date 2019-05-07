@@ -5,10 +5,10 @@
 本项目借鉴了https://gitee.com/GuoJingXun/deer-wms/widgets/widget_3.svg 项目，通过用Vue2+thinkphp改写该项目，更快更高效的数据展示，同时实现了代码的复用。
 
 ## 项目截图
-![Image text](http://47.102.107.170/1.png)
-![Image text](http://47.102.107.170/2.png)
-![Image text](http://47.102.107.170/3.png)
-![Image text](http://47.102.107.170/4.png)
+![Image text](http://47.102.107.170/1)
+![Image text](http://47.102.107.170/2)
+![Image text](http://47.102.107.170/3)
+![Image text](http://47.102.107.170/4)
 
 ## 技术说明
 ### 前端
